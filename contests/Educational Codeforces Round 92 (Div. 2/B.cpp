@@ -11,12 +11,10 @@ int main()
 	freopen("input.txt", "r", stdin); 
 	freopen("output.txt", "w", stdout); 
 #endif 
-	string ch="101";
-	int x=1;
-	if(x==(int)ch[0]-48) {
-		cout<<"loll";
+	int T;
+	cin >> T;
+	while(T--) {
+		
 	}
-	else
-		cout<<"nonon";
 	return 0;
 }
