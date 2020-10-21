@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 #define ll long long
 #define M 1000000007
 #define F first
@@ -35,7 +34,16 @@ int main()
 	int T;
 	cin >> T;
 	while(T--) {
-		
+		int n;
+		cin>>n;
+		int a[n];
+		for (int i = 0; i < n; ++i) {
+			cin>>a[i];
+		}
+		for(int i=n-1; i>=0; i--) {
+			cout<<a[i]<<" ";
+		}
+		cout<<"\n";
 	}
 	cerr<<getCurrentTime();
 	return 0;

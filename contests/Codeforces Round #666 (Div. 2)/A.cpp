@@ -35,7 +35,27 @@ int main()
 	int T;
 	cin >> T;
 	while(T--) {
-		
+		int n;
+		cin>>n;
+		string s[n];
+		std::map<char, int> m;
+		for (int i = 0; i < n; ++i) {
+			cin>>s[i];
+			for (int j = 0; j < s[i].length(); ++j) {
+				m[s[i][j]]++;
+			}
+		}
+		int f=0;
+		for (auto i : m) {
+			// deb2(i.F,i.S);
+			int offset = i.S % n;
+			if(offset) {
+				f=1;
+				break;
+			}
+		}
+		if(f) cout<<"NO\n";
+		else cout<<"YES\n";
 	}
 	cerr<<getCurrentTime();
 	return 0;

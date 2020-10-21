@@ -35,7 +35,19 @@ int main()
 	int T;
 	cin >> T;
 	while(T--) {
-		
+		int n;
+		cin>>n;
+		int x=n%10;
+		int s = (x-1)*10;
+		int d=0;
+		while(n>0) {
+			d++;
+			n/=10;
+		}
+		for (int i = 1; i <= d; ++i) {
+			s+=i;
+		}
+		cout<<s<<"\n";
 	}
 	cerr<<getCurrentTime();
 	return 0;

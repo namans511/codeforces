@@ -4,17 +4,6 @@
 #define F first
 #define S second
 #define pb push_back
-#define mp make_pair
-#define vi std::vector<int>
-#define vl std::vector<ll>
-#define pi std::pair<int,int>
-#define pl std::pair<ll,ll>
-#define mi std::map<int, int> map;
-#define ml std::map<ll, ll> map;
-#define deb(x) cout << #x << "=" << x << endl;
-#define deb2(x, y) cout << #x << "=" << x << "," << #y << "=" << y << endl
-#define fo(i, n) for(int i=0; i<n; i++)
-#define Fo(i, k, n) for(int i=k; i<k; i++)
 using namespace std;
 
 clock_t startTime;
@@ -35,7 +24,31 @@ int main()
 	int T;
 	cin >> T;
 	while(T--) {
-		
+		int r,g,b,w;
+		cin>>r>>g>>b>>w;
+		if(!(r && g && w && b)) {
+			cout<<"No\n";
+			continue;
+		}
+		int c=0;
+		if(r&1) c++;
+		if(g&1) c++;
+		if(b&1) c++;
+		if(w&1) c++;
+		if(c==1) cout<<"Yes\n";
+		else {
+			c=0;
+			r--;
+			g--;
+			b--;
+			w+=3;
+			if(r&1) c++;
+			if(g&1) c++;
+			if(b&1) c++;
+			if(w&1) c++;
+			if(c==1) cout<<"Yes\n";
+			else cout<<"No\n";
+		}
 	}
 	cerr<<getCurrentTime();
 	return 0;

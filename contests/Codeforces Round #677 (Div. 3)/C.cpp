@@ -35,7 +35,32 @@ int main()
 	int T;
 	cin >> T;
 	while(T--) {
-		
+		ll n;
+		cin>>n;
+		ll a[n];
+		std::map<int, int> m;
+		for (int i = 0; i < n; ++i) {
+			cin>>a[i];
+			m[a[i]]++;
+		}
+		if(m.size() == 1) {
+			cout<<-1<<"\n";
+			continue;
+		}
+		auto x = m.end();
+		x--;
+		int f=0;
+		int xx = x->F;
+		for (int i = 0; i < n; ++i) {
+			if(xx == a[i]) {
+				if(a[i]>a[i+1] || (i>0 && a[i]>a[i-1])) {
+					cout<<i+1<<"\n";
+					f=1;
+					break;
+				}
+			}
+		}
+		if(!f) cout<<-1<<"\n";
 	}
 	cerr<<getCurrentTime();
 	return 0;

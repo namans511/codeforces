@@ -35,7 +35,53 @@ int main()
 	int T;
 	cin >> T;
 	while(T--) {
-		
+		int n,x,y;
+		cin>>n>>x>>y;
+		std::vector<int> v;
+		if(n==2) {
+			v.pb(x);
+			v.pb(y);
+		}
+		else {
+			int d = y-x;
+			int xx= n-1;
+			int c=2;
+			int inc;
+			while(xx>1 && d%xx) xx--;
+			inc = d/xx;
+			// deb(inc);
+			int a;
+			v.pb(x);
+			v.pb(y);
+			if(xx!=1) {
+				a=x+ d/xx; 
+				while(a<y) {
+					v.pb(a);
+					c++;
+					a+=d/xx;
+				}
+			}
+			a= x- inc;
+			while(a>=1 && c<n) {
+				v.pb(a);
+				a-=inc;
+				c++;
+				// deb(c);
+			}
+			a=y+inc;
+			// deb(a);
+			while(c<n) {
+				v.pb(a);
+				a+=inc;
+				c++;
+				// deb(c);
+			}
+		}
+		sort(v.begin(), v.end());
+		for (auto i : v) {
+			cout<<i<<" ";
+		}
+		cout<<"\n";
 	}
 	cerr<<getCurrentTime();
 	return 0;

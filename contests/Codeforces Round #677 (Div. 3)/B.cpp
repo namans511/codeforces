@@ -35,7 +35,30 @@ int main()
 	int T;
 	cin >> T;
 	while(T--) {
-		
+		int s = 0;
+		int n;
+		cin>>n;
+		int a[n];
+		int f=1;
+		int ff=0;
+		int c=0;
+		for (int i = 0; i < n; ++i) {
+			cin>>a[i];
+			if(a[i]) {
+				ff=1;
+				if(!f) {
+					if(c) s+=c;
+					c=0;
+					f=1;
+				} 
+			}
+			else {
+				if(ff) c++;
+				f=0;
+			}
+		}
+		cout<<s<<"\n";
+
 	}
 	cerr<<getCurrentTime();
 	return 0;

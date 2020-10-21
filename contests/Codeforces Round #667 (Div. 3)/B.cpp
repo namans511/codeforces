@@ -35,7 +35,50 @@ int main()
 	int T;
 	cin >> T;
 	while(T--) {
-		
+		int a,b,x,y,n;
+		cin>>a>>b>>x>>y>>n;
+		unsigned long long int sa,sb,ss;
+		int ad= a-x;
+		int bd= b-y;
+		int g,l;
+		if(a==b) {
+			g=ad>bd?ad:bd;
+			l=ad>bd?bd:ad;
+			// deb2(g,l);
+			if(g>=n) a-=n;
+			else {
+				a-=g;
+				n-=g;
+				int x = min(n,l);
+				b-=x;
+			}
+			sa = a;
+			sb = b;
+			ss = sa*sb;
+			cout<<ss<<"\n";
+			continue;
+		}
+		g = (a>b)?a:b;
+		l = (a>b)?b:a;
+		int gx,lx;
+		gx = (g==a)? ad : bd ;
+		lx = (g==a)? bd : ad ;
+		if(g-min(gx,n)<l-min(lx,n)) {
+			swap(gx,lx);
+			swap(g,l);
+		}
+		if(lx>=n) l-=n;
+		else {
+			l-=lx;
+			n-=lx;
+			g = (n>=gx)? g-gx : g-n;
+		}
+		// deb2(lx,gx);
+		// deb2(l,g);
+		sa = l;
+		sb = g;
+		ss = sa*sb;
+		cout<<ss<<"\n";
 	}
 	cerr<<getCurrentTime();
 	return 0;

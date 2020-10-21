@@ -35,7 +35,18 @@ int main()
 	int T;
 	cin >> T;
 	while(T--) {
-		
+		ll a,b;
+		cin>>a>>b;
+		ll x=b-a;
+		x=abs(x);
+		if(x==0) cout<<0;
+		else if(x<11) cout<<1;
+		else {
+			ll n= x/10;
+			if(x%10) n++;
+			cout<<n;
+		} 
+		cout<<"\n";
 	}
 	cerr<<getCurrentTime();
 	return 0;

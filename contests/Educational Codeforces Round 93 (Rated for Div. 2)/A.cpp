@@ -11,7 +11,7 @@
 #define pl std::pair<ll,ll>
 #define mi std::map<int, int> map;
 #define ml std::map<ll, ll> map;
-#define deb(x) cout << #x << "=" << x << endl;
+#define deb(x) cout << #x << "x" << x << endl;
 #define deb2(x, y) cout << #x << "=" << x << "," << #y << "=" << y << endl
 #define fo(i, n) for(int i=0; i<n; i++)
 #define Fo(i, k, n) for(int i=k; i<k; i++)
@@ -35,7 +35,17 @@ int main()
 	int T;
 	cin >> T;
 	while(T--) {
-		
+		int n;
+		cin>>n;
+		int a[n];
+		for (int i = 0; i < n; ++i) {
+			cin>>a[i];
+		}
+		int f=0;
+		if(a[0]+a[1]>a[n-1]) f=1;
+		if(f==0) cout<<"1 2 "<<n;
+		else cout<<-1;
+		cout<<"\n";
 	}
 	cerr<<getCurrentTime();
 	return 0;
